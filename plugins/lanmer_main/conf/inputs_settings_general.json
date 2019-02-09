@@ -1,0 +1,37 @@
+{
+    "inputs": {
+
+        "general_main_background":  {
+            "class": "Image",
+            "title": "Obraz w tle",
+            "desc": "Plik graficzny, zalecana szerokość 1920px"
+        },
+
+        "general_main_logo": {
+            "class": "Image",
+            "title": "Główne logo witryny",
+            "desc": "Plik graficzny, najlepiej png z przeźroczystym tłem"
+        },
+
+        "general_menu_logo": {
+            "class": "Image",
+            "title": "Małe logo dla menu",
+            "desc": "Plik graficzny, najlepiej png z przeźroczystym tłem"
+        },
+
+        "owner_logo": {
+            "class": "Image",
+            "title": "Małe zdjęcie właściciela"
+        },
+
+        "general_menu_hide": {
+            "class": "Textarea",
+            "title": "Pozycje menu ukryte na stronie głównej",
+            "attr": {
+                "rows": 3,
+                "cols": 40
+            },
+            "desc": "Menu na stronie głównej nie będzie pokazywać tych linków.<br>Lista nazw rozdzielona przecinkami."
+        }
+    }
+}

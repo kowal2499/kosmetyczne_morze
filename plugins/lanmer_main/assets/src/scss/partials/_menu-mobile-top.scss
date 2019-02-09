@@ -1,0 +1,55 @@
+/*
+  Ukrywamy główne menu
+*/
+
+@media screen and (max-width: 650px) {
+  .menuContainer {
+    nav {
+      display: none;
+    }
+  }
+}
+
+/*
+  Pokazujemy górne mobilne menu
+*/
+
+.mobile-side-menu-toggler {
+  height: 48px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.65);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+
+  display: none;
+
+  transition: all 0.3s;
+
+  a#toggle {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    background-color: transparent;
+    padding: 5px 10px;
+  }
+
+  a.togglerLogo {
+
+    float: right;
+    img {
+      height: 42px;
+    }
+    margin-top: 3px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .mobile-side-menu-toggler {
+    display: block;
+  }
+}

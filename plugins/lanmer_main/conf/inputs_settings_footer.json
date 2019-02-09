@@ -1,0 +1,60 @@
+{
+    "inputs": {
+
+        "footer_background": {
+            "class": "Image",
+            "title": "Tło dla stopki",
+            "desc": "Plik graficzny"
+        },
+
+        "footer_contact_form": {
+            "class": "Radio",
+            "title": "Pokaż formularz kontaktowy",
+            "attr": {
+                "options": [
+                    {"name": "tak", "value": "1"},
+                    {"name": "nie", "value": "0"}
+                ]
+            }
+        },
+
+        "footer_destinated_email": {
+            "class": "Text",
+            "title": "Email na który mają trafiać wiadomości z formularza"
+        },
+
+        "footer_contacts":  {
+            "class": "Repeatable",
+            "title":  "Dane kontaktowe",
+            "elements":  {
+                "contact_icon": {
+                    "class": "Text",
+                    "title": "Klasa ikony"
+                },
+                "contact_text": {
+                    "class": "Textarea",
+                    "title": "Tekst kontaktu",
+                    "attr": {
+                        "rows": 3,
+                        "cols": 30
+                    }
+                },
+                "contact_link_type": {
+                    "class": "Select",
+                    "title": "Typ linku",
+                    "attr": {
+                        "options": [
+                            {"name": "email", "value": "email"},
+                            {"name": "telefon", "value": "phone"},
+                            {"name": "www", "value": "www"}
+                        ]
+                    }
+                },
+                "contact_link_destination":  {
+                    "class": "Text",
+                    "title": "Cel odnośnika"
+                }
+            }
+        }
+    }
+}

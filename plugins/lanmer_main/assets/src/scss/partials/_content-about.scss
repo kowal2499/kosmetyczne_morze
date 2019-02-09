@@ -1,0 +1,72 @@
+.pageBody.about .page-content {
+
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  .about-page-wrapper {
+
+    height: 800px;
+
+    background-repeat: no-repeat !important;
+    background-position: center left !important;
+
+    position: relative;
+
+    .ext-box {
+      width: 60%;
+      margin-right: 40px;
+      float: right;
+
+      img.about-thumbnail {
+        display: none;
+        margin: 30px auto;
+        border: 4px solid $cMainBlue;
+        width: 60%;
+      }
+
+      .content {
+        width: 100%;
+        margin: 0;
+        max-height: 700px;
+        overflow: auto;
+      }
+    }
+  }
+
+  @media screen and (min-width: 801px) and (max-width: 1023px) {
+    .about-page-wrapper {
+      background-position: center -50px !important;
+
+      .ext-box {
+        width: 70%;
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+
+    .about-page-wrapper {
+
+      background: none !important;
+      height: auto;
+
+      .ext-box {
+
+        img.about-thumbnail {
+          display: block;
+        }
+
+        .content {
+          max-height: initial;
+          padding: 20px;
+        }
+
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+
+
+}

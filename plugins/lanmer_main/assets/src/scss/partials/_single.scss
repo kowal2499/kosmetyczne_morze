@@ -1,0 +1,97 @@
+.single-treatment {
+  .content {
+    margin-left: 300px;
+    margin-right: 50px;
+    padding: 50px;
+    background-color: rgba(243,227,202, 0.5);
+
+    font-size: 17px;
+    line-height: 27px;
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: $cMainBlue;
+    }
+    h2 {
+      text-align: left;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li::before {
+      content: "\2022";
+      color: $cMainBlue;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+
+
+    blockquote {
+      border-color: $cMainBlue;
+    }
+
+    .cell {
+      margin: 1rem;
+    }
+
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .single-treatment .content {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .content {
+    .content-gallery {
+      box-sizing: border-box;
+      margin: 0 auto;
+      max-width: 1200px;
+
+      .grid {
+
+      }
+
+      .responsive-image {
+        max-width: 100%;
+      }
+
+
+
+      .cell img {
+        display: block;
+      }
+
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .content {
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    .cell {
+      width: calc(50% - 2rem);
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .content {
+    .cell {
+      width: calc(25% - 2rem);
+    }
+  }
+}

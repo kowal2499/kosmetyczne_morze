@@ -1,0 +1,37 @@
+{
+    "inputs": {
+        "photo": {
+            "class": "Image",
+            "title": "Zdjęcie pracownika",
+            "desc": "Plik graficzny, najlepiej png z przeźroczystym tłem"
+        },
+
+        "photo_square": {
+            "class": "Image",
+            "title": "Zdjęcie pracownika w formacie kwadratu",
+            "desc": "Plik graficzny, najlepiej png z przeźroczystym tłem"
+        },
+        
+        "contacts": {
+            "class": "Repeatable",
+            "title": "Formy kontaktu",
+            "elements": {
+                "contactType": {
+                    "class": "Select",
+                    "title": "Typ",
+                    "attr": {
+                        "options": [
+                            {"name": "E-mail", "value": "far fa-envelope"},
+                            {"name": "Telefon", "value": "fas fa-phone-volume"}
+                        ]
+                    }
+                },
+                "contactValue": {
+                    "class": "Text",
+                    "title": "Wartość"
+                }
+
+            }
+        }
+    }
+}

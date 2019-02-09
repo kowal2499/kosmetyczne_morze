@@ -1,0 +1,36 @@
+{
+    "inputs": {
+        "photo_background": {
+            "class": "Image",
+            "title": "Zdjęcie w tle dla głównej treści",
+            "desc": "Plik graficzny, jpg"
+        },
+        "pricelist_background": {
+            "class": "Image",
+            "title": "Zdjęcie w tle dla cennika",
+            "desc": "Plik graficzny, jpg"
+        },
+
+        "photo_treatment": {
+          "class": "Image",
+          "title": "Zdjęcie dla kafelka",
+          "desc": "Plik graficzny, jpg, 600x400"
+        },
+
+        "price_list": {
+            "class": "Repeatable",
+            "title": "Cennik",
+            "elements": {
+                "name": {
+                    "class": "Text",
+                    "title": "Nazwa"
+                },
+                "value": {
+                    "class": "Number",
+                    "title": "Cena"
+                }
+
+            }
+        }
+    }
+}

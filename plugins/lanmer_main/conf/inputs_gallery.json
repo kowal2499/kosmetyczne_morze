@@ -1,0 +1,36 @@
+{
+    "inputs": {
+        "description": {
+            "class": "Textarea",
+            "title": "Opis galerii",
+            "desc": "Jakiś opis",
+            "attr": {
+                "rows": 5,
+                "cols": 80
+            }
+        },
+
+        "orientation": {
+            "class": "Select",
+            "title": "Kierunek",
+            "attr": {
+                "options": [
+                    {"name": "slajd po lewej stronie, opis po prawej", "value": "1"},
+                    {"name": "slajd po prawej stronie, opis po lewej", "value": "2"}
+                ]
+            }
+        },
+
+        "lanmerGallery": {
+            "class": "Repeatable",
+            "title": "Galeria zdjęć",
+            "elements": {
+                "galleryItem": {
+                    "class": "Image",
+                    "title": "Zdjęcie/Obraz",
+                    "desc": "Dodaj element galerii"
+                }
+            }
+        }
+    }
+}

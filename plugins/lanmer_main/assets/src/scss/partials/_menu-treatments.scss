@@ -1,0 +1,35 @@
+.menuTreatments {
+    background-color: #fcf0c8;
+    height: 400px;
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        li {
+            position: relative;
+            display: block;
+            padding: 8px 0;
+
+            .submenu {
+                position: absolute;
+                width: 400px;
+                height: 100px;
+                background-color: gray;
+                top: 0;
+                left: 100%;
+                width: 100%;
+                display: none;
+            }
+
+            &:hover > .submenu {
+                display: block;
+            }
+        }
+        &:first-child {
+            padding-top: 16px;
+        }
+        &:last-child {
+            padding-bottom: 16px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.rules table {
+  font-size: 0.8em;
+  line-height: 1.4em !important;
+
+  td {
+    padding: 10px !important;
+    border-top: none !important;
+    vertical-align: middle !important;
+  }
+  td.section-title {
+    text-align: center;
+  }
+
+  td.section-body .body-inner {
+    border-left: 1px solid $cMainBlue;
+    padding-left: 12px;
+
+    .text-center {
+      background-color: $cWhite;
+    }
+  }
+}

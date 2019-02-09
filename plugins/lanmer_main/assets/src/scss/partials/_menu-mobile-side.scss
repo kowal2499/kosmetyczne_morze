@@ -1,0 +1,96 @@
+.side-menu {
+  height: 100%;
+  border-right: 7px solid $cMainBlue;
+  background-color: $cWhite;
+
+  .navigation {
+    background: linear-gradient(to bottom, #fff 0%, #d8d8d8 100%);
+  }
+
+  .logo-mobile {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  .menu {
+    ul {
+      & > a {
+        display: none;
+      }
+
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        text-align: center;
+
+        a {
+          display: block;
+          width: 100%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+
+          text-transform: uppercase;
+          outline: none;
+          transition: all 0.4s;
+          color: $cText;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          img {
+            display: none;
+          }
+        }
+
+        &.current-menu-item {
+          font-weight: bold;
+
+          background-image: url('../imgs/swirl_pattern.png');
+          background-repeat: repeat;
+
+          border-top: 1px solid $cWhiteAccent;
+          border-bottom: 1px solid $cWhiteAccent;
+        }
+      }
+    }
+    padding-bottom: 20px;
+  }
+
+  .swirl {
+    background-image: url('../imgs/swirl-slice.png');
+    background-repeat: repeat;
+    height: 22px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .contact {
+    h4 {
+      display: none;
+    }
+  }
+
+  .contact-detail-item {
+    text-align: center;
+
+    .contact-detail-icon {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+
+      i {
+        font-size: 20px;
+        padding: 0;
+      }
+    }
+
+    .contact-detail-text {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+}

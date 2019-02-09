@@ -1,0 +1,60 @@
+{
+    "inputs": {
+        "slider": {
+            "class": "Repeatable",
+            "title": "Elementy slidera strony tytułowej",
+            "desc": "Ustaw proszę co tylko chcesz",
+            "elements": {
+                "background": {
+                    "class": "Image",
+                    "title": "Obraz tła",
+                    "desc": "Zalecana rozdzielczość 1920x400px, rozmiar pliku max 100kB"
+                },
+                "actor": {
+                    "class": "Image",
+                    "title": "Animowany obrazek",
+                    "desc": "Zalecany typ pliku: png"
+                },
+                "text": {
+                    "class": "Textarea",
+                    "title": "Tekst slajdu",
+                    "desc": "Tekst na slajdzie, można używać tagów HTML",
+                    "attr": {
+                        "rows": 5,
+                        "cols": 40
+                    }
+                },
+                "anim_type": {
+                    "class": "Select",
+                    "title": "Typ animacji",
+                    "attr": {
+                        "options": [
+                            {"name": "z lewej", "value": "1"},
+                            {"name": "z prawej", "value": "2"},
+                            {"name": "z góry", "value": "3"},
+                            {"name": "z dołu", "value": "4"}
+                        ]
+                    }
+                },
+                "cta_enable": {
+                    "class": "Checkbox",
+                    "title": "Pokaż przycisk odsyłacza",
+                    "attr": {
+                        "options": [
+                            {"name": "tak", "value": "1"}
+                        ]
+                    }
+                },
+                "cta_text": {
+                    "class": "Text",
+                    "title": "Tekst na przycisku"
+                },
+                "cta_link": {
+                    "class": "Text",
+                    "title": "Link z przycisku"
+                }
+            },
+            "translate": true
+        }
+    }
+}

@@ -1,0 +1,274 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero {
+    .sectionLogo {
+        img {
+            width: 250px;
+        }
+        padding: 20px 0;
+    }
+
+    .sectionTreatmentDetails {
+        width: 100%;
+        height: 400px;
+        background-color: red;
+    }
+
+    .heroContainer {
+        position: relative;
+        background-color: $cHeroBack;
+        height: 450px;
+        width: 100%;
+        
+        .wrapper {
+            position: absolute;
+            left: 350px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            .slider#slider {
+                .slide {
+                    position: relative;
+                    height: 450px;
+                    overflow: hidden;
+
+                    img.slide-img {
+                        position: absolute;
+                        display: block;
+                        max-height: 80%;
+                        right: 0;
+                        bottom: 0;
+                        opacity: 0;
+                        z-index: 16;
+                    }
+
+                    .sentence {
+                        position: absolute;
+                        width: 60%;
+                        left: 30px;
+                        top: 30px;
+                        z-index: 18;
+                        background-color: rgba(255, 255, 255, 0.3);
+                        text-align: center;
+
+                        h3.slide-lead {
+                            line-height: 30px;
+                            font-size: 25px;
+                            font-style: italic;
+                            font-weight: 400;
+                            color: #888;
+                            
+                            padding: 10px;
+                            padding-right: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slide-navigation {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            ul {
+              margin-right: 20px;
+              list-style-type: none;
+                li { 
+                    a {
+                        display: inline-block;
+                        text-align: center;
+                        width: 25px;
+                        border: 2px solid $cMainBlue;
+                        border-radius: 15px;
+                        text-decoration: none;
+                    
+                        &:hover {
+                            background-color: rgba(255, 255, 255, 0.2);
+                        }
+                    }
+
+                        &.slick-active a {
+                            background-color: white;
+                        }
+
+                        margin-bottom: 12px;
+                    
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+
+        nav {
+            position: relative;
+            z-index: 20;
+            display: inline-block;
+            width: 350px;
+            height: 100%;
+            background-image: url('../imgs/swirl_pattern.png');
+            background-repeat: repeat;
+            background-color: $cWhite;
+            vertical-align: top;
+
+            .ext-box {
+                .int-box {
+                    ul {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+
+                        li {
+                            font-size: 15px;
+                            transition: all 0.4s;
+
+                            a {
+                                display: block;
+                                width: 100%;
+                                margin: 0 auto;
+                                padding: 8px 0;
+
+                                font-variant: small-caps;
+                                font-size: 18px;
+                                text-align: center;
+
+                                transition: all 0.4s;
+
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                            }
+
+                            &.active {
+                                background-color: rgba(0, 195, 203, 0.3);
+                                a {
+                                    transform: scale(1.05);
+                                    -ms-transform: scale(1.05); /* IE 9 */
+                                    -webkit-transform: scale(1.05); /* Safari */
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+
+
+                        &.hidden {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            
+            &+nav {
+                background-image: none;
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+            
+        }
+        nav:not([data-level="0"]) {
+            margin-left: -4px;
+        }
+    }
+
+    a {
+        color: $cText;
+    }
+
+    a:visited {
+        color: $cText;
+    }
+
+
+    .anim-right {
+        animation: anim-right 5s forwards;
+    }
+      
+    @keyframes anim-right {
+    0% {
+        transform: translateX(600px);
+        opacity: 0;
+    }
+    20% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
+    90% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translateX(600px);
+        opacity: 0;
+    }
+    }
+
+
+}
+
+
+@media screen and (max-width: 991px) {
+    .hero {
+        .heroContainer {
+
+            height: 350px;
+
+            nav {
+                width: 200px;
+
+                .ext-box .int-box ul li a {
+                    font-size: 17px;
+                    padding: 6px 0;
+                }
+            }
+
+            .wrapper {
+                left: 200px;
+
+                .slider#slider {
+                    .slide {
+                        height: 350px;
+
+                        .sentence {
+                            h3.slide-lead {
+                                line-height: 26px;
+                                font-size: 20px;
+                            }
+                        }
+
+                        img.slide-img {
+                            max-height: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+    Be done with the hero side menu
+*/
+@media screen and (max-width: 650px) {
+    .hero {
+        .heroContainer {
+            .wrapper {
+                left: 0;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .slide-navigation {
+                display: none;
+            }
+        }
+    }
+}

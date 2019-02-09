@@ -1,0 +1,23 @@
+{
+    "inputs": {
+        "rules": {
+            "class": "Repeatable",
+            "title": "Regulamin Kosmetycznego SPA",
+            "elements": {
+                "title": {
+                    "class": "Text",
+                    "title": "Tytuł paragrafu"
+                },
+                "paragraph": {
+                    "class": "Textarea",
+                    "title": "Paragraf",
+                    "desc": "Napisz proszę co tylko chcesz",
+                    "attr": {
+                        "rows": 8,
+                        "cols": 100
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,226 @@
+$cSea: #61b39c;
+$cMainBlue: #00C3CB;
+$cMainOrange: #EF9E40;
+$cMainBege: #F3E3CA;
+$cMainOlive: #8FC0A9;
+$cMainBlueWithOpacity: rgba(0, 195, 203, 0.5);
+$cMainBlueWithOpacity0_1: rgba(0, 195, 203, 0.1);
+
+// Background colors
+$cBackgroundContentBege: rgba(243, 227, 202, 0.5); // bege
+$cBackgroundContentBege0_9: rgba(243, 227, 202, 0.9); // bege
+
+// alabaster
+$cSecondaryAlabaster: rgb(239, 248, 226);
+$cBackgroundContentAlabaster0_9: rgba(239, 248, 226, 0.9);
+$cBackgroundContentAlabaster: rgba(239, 248, 226, 0.5);
+
+$cText: #333;
+$cWhite: #fff;
+$cWhiteMinus: #f8f8f8;
+$cWhiteAccent: #eee;
+$cHeroBack: #D9D8C1;
+$cGray: #aaa;
+$cLightGray: #F4F4F4;
+
+$sideRange: 240px;
+
+
+
+@import 'partials/_home-layout';
+@import 'partials/_home-hero';
+@import 'partials/_home-adv-gallery';
+@import 'partials/_home-staff';
+
+@import 'partials/_menu-primary';
+@import 'partials/_menu-treatments';
+@import 'partials/_menu-mobile-side';
+@import 'partials/_menu-mobile-top';
+
+@import 'partials/_archive-staff';
+@import 'partials/_archive-treatments';
+
+@import 'partials/_single-treatment';
+
+@import 'partials/_after-treatment';
+
+@import 'partials/_page';
+@import 'partials/_footer';
+@import 'partials/_rules';
+
+@import 'partials/_content-about';
+@import 'partials/_content';
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#page {
+    width: 100%;
+    position: relative;
+
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+    background-size: 100% 700px !important;
+
+    transition: all 0.3s;
+}
+
+#side {
+    position: fixed;
+    width: $sideRange;
+    height: 100%;
+    transform: translateX($sideRange * -1);
+    transition: all 0.3s;
+}
+
+#page.expanded,
+.mobile-side-menu-toggler.expanded {
+    transform: translateX($sideRange);
+}
+
+#side.expanded {
+    transform: translateX(0px);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    padding-top: 0;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ext-box {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    .int-box {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.cta {
+    display: inline-block;
+    border: 2px solid $cMainBlue;
+    padding: 10px;
+    margin: 0px 0 20px 0;
+    transition: all 0.15s;
+
+    &:hover {
+        background-color: $cWhiteMinus;
+        text-decoration: none;
+        cursor: pointer;
+        
+        box-shadow: 0px 0px 4px rgba(0, 195, 203, 0.5);
+    }
+}
+
+a.cta, a.cta:visited {
+    color: $cMainBlue;
+}
+
+a, a:visited {
+    color: $cText;
+}
+
+h2 {
+    text-align: center;
+    color: $cSea;
+    text-align: center;
+}
+
+.btn {
+    padding: 0px 12px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.hidden {
+    display: none;
+}
+
+.contact-detail-item {
+    & + .contact-detail-item {
+        margin-top: 5px;
+    }
+
+    .ext-box {
+        height: 30px;
+    }
+
+    .contact-detail-icon {
+        display: inline-block;
+        width: 20%;
+
+        text-align: right;
+        i {
+            padding-right: 10px;
+            color: $cMainBlue;
+        }
+    }
+
+    .contact-detail-text {
+        display: inline-block;
+        width: 65%;
+    }
+
+    a {
+        color: $cText;
+
+    }
+}
+
+.breadcrumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 0;
+    padding: 4px 8px;
+    margin: 0;
+    text-align: center;
+
+    a {
+        color: #666;
+        transition: all 0.1s;
+        font-size: 12px;
+    }
+
+    a:hover {
+        color: $cMainBlue;
+        text-decoration: none;
+    }
+}
+
+.pageBody {
+    .breadcrumb {
+        margin-top: 10px;
+    }
+}
+
+.logo {
+    width: 74px;
+    height: 74px;
+    margin: 5px auto;
+    background: url("../imgs/logo-dark-tiny.png");
+}
+
+.courtain {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 10000;
+    background-color: $cWhite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

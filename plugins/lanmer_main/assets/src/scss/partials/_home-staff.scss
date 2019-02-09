@@ -1,0 +1,222 @@
+.staff {
+
+    text-align: center;
+
+    img.small-logo {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    #navigation {
+        text-align: center;
+
+        ul.slick-dots {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+
+                border: 2px solid transparent;
+                transition: all 0.3s;
+
+                a {
+                    display: block;
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+
+                    &:hover, &:focus, &:active {
+                        text-decoration: none;
+                    }
+                    &:hover {
+                        color: $cMainBlue;
+                    }
+
+                    font-size: 19px;
+                    color: $cText;
+                }
+
+                &.slick-active {
+                    border-color: $cMainBlue;
+                }
+            }
+        }
+    }
+
+    .slider {
+        height: 100%;
+        height: 400px;
+
+        overflow: hidden;
+
+        .slide {
+            position: relative;
+            height: 400px;
+
+            img {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            .background {
+                position: absolute;
+                background-image: url('../imgs/swirl_pattern.png');
+                background-repeat: repeat;
+
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 300px;
+
+                h3 {
+                    background-color: $cHeroBack;
+                    margin: 0;
+                    padding: 15px 20px;
+                    font-weight: 400;
+                    font-variant: small-caps;
+                    font-size: 30px;
+                    letter-spacing: 2px;
+                    text-align: right;
+                    position: relative;
+
+                    .mobile-pic {
+                        display: none;
+                    }
+                }
+                p {
+                    margin-top: 20px;
+                    margin-right: 20px;
+                    padding-left: 280px;
+                    height: 150px;
+                    overflow-y: auto;
+                    font-size: 13px;
+                    text-align: left;
+                }
+                .footer {
+                    position: absolute;
+                    bottom: 0;
+                    left: 280px;
+                    right: 0;
+                    padding-top: 10px;
+                    border-top: 2px solid $cMainBlue;
+
+
+                    ul {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        text-align: center;
+                        li {
+                            display: inline-block;
+                            font-size: 12px;
+                            a {
+                                color: $cText;
+                                transition: all 0.3s;
+                                outline: none;
+                                i {
+                                    border-radius: 30px;
+                                    margin-right: 10px;
+                                    color: $cMainBlue;
+                                    width: 36px;
+                                }
+
+                                &:hover, &:focus, &:active {
+                                    span {
+                                        color: $cMainBlue;
+                                        box-shadow: 0px 0px 4px $cMainBlue;
+                                    }
+                                    text-decoration: none;
+                                    cursor: pointer;
+                                    color: $cMainBlue;
+                                }
+                            }
+                            margin-right: 20px;
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .staff {
+
+        .slider .slide .background {
+            p {
+                height: 110px;
+            }
+
+            .footer {
+                ul {
+                    text-align: left;
+                    padding-left: 10px;
+                }
+
+                .cta {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .staff {
+        .slider .slide .background {
+            p {
+                padding-left: 240px;
+            }
+
+            .footer {
+                left: 240px;
+            }
+        }
+
+        .slider .slide img {
+            width: 250px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .staff {
+        .slider .slide .background {
+            p {
+                padding-left: 20px;
+                height: 150px;
+            }
+
+            .footer {
+                left: 20px;
+                a {
+                    color: $cMainBlue !important;
+                }
+
+                i {
+                    display: none;
+                }
+            }
+
+            h3 {
+                .mobile-pic {
+                    display: inline-block;
+                    width: 80px;
+                    left: 20px;
+                    bottom: 0;
+                }
+                font-size: 20px;
+            }
+        }
+
+        .slider .slide img {
+            display: none;
+        }
+    }
+
+
+}

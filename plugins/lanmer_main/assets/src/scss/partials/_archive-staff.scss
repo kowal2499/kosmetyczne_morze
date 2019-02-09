@@ -1,0 +1,83 @@
+#archive {
+  .staff-contact {
+    padding: 0 20px;
+
+    img {
+      position: relative;
+      margin: 0 auto;
+      width: 100px;
+      border: 5px solid $cMainBlueWithOpacity;
+      z-index: 10;
+      background-color: $cWhite;
+      transform:translateY(50px);
+    }
+
+    .info-block {
+      position: relative;
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+      z-index: 5;
+
+      background-image: url('../imgs/swirl_pattern.png');
+      background-repeat: repeat;
+      padding: 10px;
+      border: 1px solid $cLightGray;
+
+      h3 {
+        margin: 0;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 15px;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        li {
+          margin-bottom: 3px;
+          text-align: center;
+          a {
+            color: $cText;
+            transition: all 0.3s;
+            outline: none;
+            i {
+              width: 30px;
+              height: 30px;
+              border: 2px solid $cMainBlueWithOpacity;
+              border-radius: 15px;
+              padding-top: 5px;
+              text-align: center;
+              background-color: $cWhite;
+              margin-right: 5px;
+              color: $cMainBlue;
+            }
+
+            &:hover, &:focus, &:active {
+              span {
+                color: $cMainBlue;
+                box-shadow: 0px 0px 4px $cMainBlue;
+              }
+              text-decoration: none;
+              cursor: pointer;
+              color: $cMainBlue;
+            }
+          }
+        }
+
+      }
+
+      .description {
+        margin-top: 10px;
+        padding: 20px;
+        border: 1px solid $cLightGray;
+        background: $cWhite;
+      }
+    }
+  }
+
+
+
+
+
+}

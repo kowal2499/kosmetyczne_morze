@@ -1,0 +1,10 @@
+languages/*
+plugins/*
+themes/*
+uploads/*
+
+!plugins/lanmer_main
+plugins/lanmer_main/node_modules
+
+!themes/lanmer_theme/
+

@@ -1,0 +1,114 @@
+.about-us {
+    margin-bottom: 60px;
+}
+
+.hh-gallery {
+    margin-top: 30px;
+
+    ul.bubble-gallery {
+        padding: 0;
+        margin: 0;
+        width: 150px;
+        height: 150px;
+        list-style-type: none;
+
+        position: relative;
+
+        li.bubble-gallery-item {
+            position: absolute;
+            border-radius: 50%;
+
+            img {
+                width: 150px;
+                height: 150px;
+                border: 6px solid $cWhite;
+                transition: all 0.3s;
+
+                &:hover {
+                    border-color: $cMainBlue;
+                    box-shadow: 0px 0px 8px  $cMainBlue;
+                    cursor: pointer;
+                }
+            }
+        }
+        li.bubble-gallery-item:first-child {
+        }
+
+        li.bubble-gallery-item:nth-child(2) {
+            top: 50%;
+            left: 50%;
+            width: 100%;
+        }
+
+        li.bubble-gallery-item.show-more {
+            width: 60px;
+            height: 60px;
+            background-color: $cWhite;
+
+            top: 110%;
+            left: 43%;
+            border: 1px solid $cMainBlue;
+            border-radius: 30px;
+            transition: all 0.3s;
+
+            i {
+                width: 100%;
+                height: 100%;
+
+                font-size: 30px;
+                color: $cWhiteAccent;
+
+                padding-left: 13px;
+                padding-top: 13px;
+                transition: all 0.3s;
+
+            }
+
+            &:hover {
+                i {
+                    color: $cMainBlue;
+                    transform: scale(1.07);
+                }
+                box-shadow: 0px 0px 4px $cMainBlue;
+            }
+        }
+    }
+
+    img.small-logo {
+        width: 60px;
+        margin: 20px auto;
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .hh-gallery {
+
+        ul.bubble-gallery {
+            margin: 0 auto;
+            transform: translateX(-30px);
+
+            li.bubble-gallery-item {}
+
+            li.bubble-gallery-item:nth-child(2) {
+                top: 0%;
+                left: 60%;
+                width: 100%;
+            }
+            li.bubble-gallery-item.show-more {
+                top: 30%;
+                left: 130%;
+            }
+        }
+
+        img.small-logo {
+            margin: 10px auto;
+            width: 50px;
+        }
+
+        p.description {
+            font-size: 15px;
+        }
+    }
+}

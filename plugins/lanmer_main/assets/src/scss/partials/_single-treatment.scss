@@ -1,0 +1,80 @@
+.single-treatment {
+
+  .reversed {
+    background-position: center right !important;
+  }
+
+  .price-list {
+    margin-right: 250px;
+    margin-left: 50px;
+    padding: 50px;
+    background-color: rgba(143,192,169, 0.5);
+
+    font-size: 17px;
+    line-height: 27px;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: $cMainBlue;
+      text-align: left;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      li span {
+        width: 1%;
+        white-space: nowrap;
+        display: table-cell;
+      }
+      li span.name, li span.price {
+        width: 1%;
+      }
+      li span.separator {
+        width: 100%;
+        position: relative;
+        color: transparent;
+
+        &:after {
+          content: "";
+          width: 80%;
+          position: absolute;
+          left: 10%;
+          bottom: 7px;
+          border-top: 1px solid $cText;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .single-treatment {
+    .price-list {
+      margin-right: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .single-treatment {
+    .price-list {
+      margin-right: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .single-treatment {
+
+    .price-list {
+      background-color: transparent;
+      padding: 0;
+      padding-bottom: 20px;
+    }
+
+  }
+}
