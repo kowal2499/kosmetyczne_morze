@@ -117,58 +117,11 @@ body {
             background-color: $cWhite;
             vertical-align: top;
 
-            .ext-box {
-                .int-box {
-                    ul {
-                        list-style-type: none;
-                        margin: 0;
-                        padding: 0;
-
-                        li {
-                            font-size: 15px;
-                            transition: all 0.4s;
-
-                            a {
-                                display: block;
-                                width: 100%;
-                                margin: 0 auto;
-                                padding: 8px 0;
-
-                                font-variant: small-caps;
-                                font-size: 18px;
-                                text-align: center;
-
-                                transition: all 0.4s;
-
-                                &:hover {
-                                    text-decoration: none;
-                                }
-                            }
-
-                            &.active {
-                                background-color: rgba(0, 195, 203, 0.3);
-                                a {
-                                    transform: scale(1.05);
-                                    -ms-transform: scale(1.05); /* IE 9 */
-                                    -webkit-transform: scale(1.05); /* Safari */
-                                    background-color: transparent;
-                                }
-                            }
-                        }
-
-
-                        &.hidden {
-                            display: none;
-                        }
-                    }
-                }
-            }
-            
             &+nav {
                 background-image: none;
                 background-color: rgba(255, 255, 255, 0.9);
             }
-            
+
         }
         nav:not([data-level="0"]) {
             margin-left: -4px;

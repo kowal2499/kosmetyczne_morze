@@ -1,0 +1,116 @@
+.treatment-category {
+
+  padding: 30px;
+
+  .treatment-heading {
+
+    position: relative;
+
+    background-image: url('../imgs/swirl_pattern.png');
+    background-repeat: repeat;
+    border: 1px solid $cLightGray;
+
+    text-align: left;
+
+
+    a {
+      text-decoration: none;
+      z-index: 50;
+      display: block;
+      padding: 10px 20px;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: $cMainBlueWithOpacity0_1;
+
+        h2 {
+          transform: scale(1.02);
+        }
+
+      }
+
+      &.collapsed {
+        i {
+          transform: rotate(-90deg);
+        }
+      }
+
+    }
+
+    h2 {
+      text-align: left;
+      margin: 0;
+      display: inline-block;
+      font-variant: small-caps;
+      color: #333;
+      transition: all 0.2s;
+    }
+
+    i {
+      transition: all 0.2s;
+      top: 10px;
+      position: relative;
+    }
+
+  }
+
+
+}
+
+.treatment-body {
+
+  background-color: $cBackgroundContentBege;
+  padding: 20px;
+
+  .treatment-item {
+
+    background-color: $cWhite;
+
+
+    img {
+      height: 130px;
+    }
+
+    & + .treatment-item {
+      margin-top: 20px;
+    }
+
+    h4 {
+      padding: 10px 10px;
+      font-weight: bold;
+      color: $cMainBlue;
+    }
+
+    p {
+      padding: 10px;
+    }
+
+    .price {
+      background-color: $cMainBlueWithOpacity0_1;
+      height: 130px;
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .treatment-body .treatment-item {
+    .price {
+      height: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .treatment-body .treatment-item {
+
+    img {
+      height: auto;
+    }
+
+    .media .media-left {
+      padding-right: 0;
+    }
+  }
+}

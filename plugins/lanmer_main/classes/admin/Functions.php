@@ -98,7 +98,9 @@ class Functions
             case 'page':
                 return get_the_title();
             case 'zabiegi':
-                if (is_archive()) {
+                if (is_tax()) {
+                    return get_queried_object()->name;
+                } else if (is_archive()) {
                     return 'Oferta';
                 } else {
                     return get_the_title();
@@ -144,7 +146,10 @@ class Functions
     public static function lanmer_get_breadcrumbs($id, &$trail = [])
     {
         // dodaj bieżącą stronę
-        if (is_archive() == false) {
+
+        if (is_tax()) {
+
+        } else if (is_archive() == false) {
             $item = self::lanmer_get_page_name_breadcrumb($id);
             array_unshift($trail, '<a href="' . $item['url'] . '">' . $item['title'] . '</a>');
         }
@@ -155,7 +160,12 @@ class Functions
             // nie ma rodziców,
             switch (get_post_type()) {
                 case 'zabiegi':
-                    array_unshift($trail, '<a href="' . get_post_type_archive_link('zabiegi') . '">Oferta</a>');
+                    if (is_tax()) {
+                        $tax = get_queried_object();
+                        array_unshift($trail, '<a href="' . get_category_link($tax->term_taxonomy_id) . '">' . $tax->name . '</a>');
+                    } else {
+                        array_unshift($trail, '<a href="' . get_permalink($id) . '">Oferta</a>');
+                    }
                     break;
                 case 'pracownicy':
                     array_unshift($trail, '<a href="' . get_post_type_archive_link('pracownicy') . '">Ekspertki</a>');

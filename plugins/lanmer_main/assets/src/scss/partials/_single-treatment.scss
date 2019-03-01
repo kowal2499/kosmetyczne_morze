@@ -1,5 +1,23 @@
 .single-treatment {
 
+
+  .morze-sidebar {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-image: url('../imgs/swirl_pattern.png');
+    background-repeat: repeat;
+    background-color: $cWhite;
+
+    border-top: 2px solid #00C3CB;
+    border-bottom: 2px solid #00C3CB;
+
+    margin-top: 20px;
+
+    ul li.active {
+      background-color: rgba(0, 195, 203, 0.5);
+    }
+  }
+
   .reversed {
     background-position: center right !important;
   }

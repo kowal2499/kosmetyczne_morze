@@ -121,12 +121,15 @@
             margin: 0;
             letter-spacing: 2px;
             color: $cMainBlue;
-            background-color: $cBackgroundContentAlabaster;
+            //background-color: $cBackgroundContentAlabaster;
             padding: 30px 80px;
             text-align: center;
             display: inline-block;
-            text-shadow: 0px 0px 2px $cMainOrange;
+            //text-shadow: 0px 0px 2px $cMainOrange;
 
+
+            background: -webkit-linear-gradient(-14deg, #fae2c6, #b3edef);
+            background: linear-gradient(-14deg, #fae2c6, #b3edef);
 
             border: 1px solid $cLightGray;
             border-right: 1px solid $cWhite;

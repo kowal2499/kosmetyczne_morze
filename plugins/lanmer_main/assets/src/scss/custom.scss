@@ -43,6 +43,7 @@ $sideRange: 240px;
 @import 'partials/_single-treatment';
 
 @import 'partials/_after-treatment';
+@import 'partials/_tax-treatment';
 
 @import 'partials/_page';
 @import 'partials/_footer';
@@ -50,6 +51,7 @@ $sideRange: 240px;
 
 @import 'partials/_content-about';
 @import 'partials/_content';
+@import 'partials/_common';
 
 html, body {
     min-height: 100%;
