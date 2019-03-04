@@ -59,7 +59,7 @@ $categories = get_categories([
                     <div class="sentence">
                         <h3 class="slide-lead"><?php echo $slide['text']; ?></h3>
                         <?php if ($slide['cta_enable']): ?>
-                            <a class="cta"><?php echo $slide['cta_text']; ?></a>
+                            <a href="<?php echo $slide['cta_link']; ?>" class="cta"><?php echo $slide['cta_text']; ?></a>
                         <?php endif; ?>
                     </div>
                     
