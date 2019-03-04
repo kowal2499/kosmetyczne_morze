@@ -24,9 +24,9 @@ use admin\Settings;
 
 <body <?php body_class(); ?> >
 
-<!--    <div class="courtain">-->
-<!--        <div class="logo"></div>-->
-<!--    </div>-->
+    <div class="courtain">
+        <div class="logo"></div>
+    </div>
 
 
     <div id="side">

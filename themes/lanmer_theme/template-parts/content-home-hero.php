@@ -58,7 +58,9 @@ $categories = get_categories([
                 <div class="slide" data-id="<?php echo $c; ?>">
                     <div class="sentence">
                         <h3 class="slide-lead"><?php echo $slide['text']; ?></h3>
-                        <a class="cta"><?php echo $slide['cta_text']; ?></a>
+                        <?php if ($slide['cta_enable']): ?>
+                            <a class="cta"><?php echo $slide['cta_text']; ?></a>
+                        <?php endif; ?>
                     </div>
                     
                     <img class="slide-img <?php if ($c==0) { echo 'anim-right'; } ?>" style="" src="<?php echo wp_get_attachment_url($slide['actor']); ?>">
