@@ -145,35 +145,56 @@ class Functions
      */
     public static function lanmer_get_breadcrumbs($id, &$trail = [])
     {
-        // dodaj bieżącą stronę
 
-        if (is_tax()) {
 
-        } else if (is_archive() == false) {
+        if (is_archive() == false) {
             $item = self::lanmer_get_page_name_breadcrumb($id);
             array_unshift($trail, '<a href="' . $item['url'] . '">' . $item['title'] . '</a>');
         }
 
-        if (wp_get_post_parent_id($id)) {
-            self::lanmer_get_breadcrumbs(wp_get_post_parent_id($id), $trail);
-        } else {
-            // nie ma rodziców,
-            switch (get_post_type()) {
-                case 'zabiegi':
-                    if (is_tax()) {
-                        $tax = get_queried_object();
-                        array_unshift($trail, '<a href="' . get_category_link($tax->term_taxonomy_id) . '">' . $tax->name . '</a>');
-                    } else {
-                        array_unshift($trail, '<a href="' . get_permalink($id) . '">Oferta</a>');
-                    }
-                    break;
-                case 'pracownicy':
-                    array_unshift($trail, '<a href="' . get_post_type_archive_link('pracownicy') . '">Ekspertki</a>');
-                    break;
-            }
-            // na początku dodaj link do strony głównej
-            array_unshift($trail, '<a href="' . home_url() . '"><i class="fas fa-home"></i></a>');
+
+        switch (get_post_type()) {
+
+            case 'zabiegi':
+
+                $trail = [];
+
+                // link do strony 'oferta'
+                $pageUrl = get_page_by_title('oferta', ARRAY_A, 'page');
+                array_push($trail, '<a href="' . get_page_link($pageUrl['ID']) . '">Oferta</a>');
+
+                /**
+                 * Jedna kategoria z oferty
+                 */
+
+                if (is_tax()) {
+
+                    $tax = get_queried_object();
+                    array_push($trail, '<a href="' . get_category_link($tax->term_taxonomy_id) . '">' . $tax->name . '</a>');
+
+                } else {
+
+                    /**
+                     * Strona oferty
+                     */
+
+                    // kategoria
+                    $zabiegiCategory = get_the_terms(get_the_ID(), 'kategoria');
+                    array_push($trail, '<a href="' . get_category_link($zabiegiCategory[0]->term_id) . '">' . $zabiegiCategory[0]->name . '</a>');
+
+                    // bieżąca strona
+                    array_push($trail, '<a href="' . get_the_permalink() . '">' . get_the_title() . '</a>');
+                }
+
+                break;
+
+            case 'pracownicy':
+                array_unshift($trail, '<a href="' . get_post_type_archive_link('pracownicy') . '">Ekspertki</a>');
+                break;
         }
+        
+        // na początku dodaj link do strony głównej
+        array_unshift($trail, '<a href="' . home_url() . '"><i class="fas fa-home"></i></a>');
 
         return $trail;
     }

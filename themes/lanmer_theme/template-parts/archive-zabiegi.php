@@ -1,6 +1,7 @@
 <?php
     $id = get_the_ID();
-    $image = get_post_meta($id, 'photo_treatment')[0];
+    $image = wp_get_attachment_url(get_post_meta($id, 'photo_treatment')[0]) ?: \admin\Functions::get_dummy_img();
+    get_post_meta($id, 'photo_treatment')[0];
     $path = wp_get_attachment_image_src($image, 'thumbnail')[0];
 
     $name = get_the_title();

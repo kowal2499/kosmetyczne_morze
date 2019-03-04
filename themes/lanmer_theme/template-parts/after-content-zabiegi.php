@@ -21,7 +21,7 @@ if (empty($parentPosts)) {
 
 }
 
-$siblings = $treatments->findAll($search);
+$siblings = null; /*$treatments->findAll($search);*/
 $children = $treatments->findAll(['post_parent' => $thisPost]);
 
 /**
@@ -106,5 +106,4 @@ if ($siblings):
     </div>
     <hr>
 <?php endif; ?>
-    <div class="logo"></div>
 </div><!-- .after-treatment-siblings -->

@@ -132,7 +132,7 @@ function lanmer_theme_scripts() {
 
 	/** ** ** ** ** */
 
-    if (is_archive() && get_query_var('post_type') === 'zabiegi') {
+    if (is_archive() && get_query_var('post_type') === 'zabieg') {
         wp_enqueue_style('slick-slider-theme', plugins_url() . '/lanmer_main/node_modules/slick-carousel/slick/slick-theme.css');
     }
 

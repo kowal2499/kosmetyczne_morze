@@ -31,7 +31,7 @@ get_header();
 
                             switch (get_post_type()) {
                                 case 'zabiegi':
-                                    get_template_part('template-parts/after-content', get_post_type());
+//                                    get_template_part('template-parts/after-content', get_post_type());
                                     break;
                             }
 
@@ -43,6 +43,7 @@ get_header();
                         <div class="breadcrumb">
                             <?php echo implode(' &gt; ', \admin\Functions::lanmer_get_breadcrumbs(get_the_ID())); ?>
                         </div>
+                        <div class="logo"></div>
 
                         <?php
 

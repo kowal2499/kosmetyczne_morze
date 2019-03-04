@@ -8,6 +8,12 @@ $slider = $settings->getSlider();
 
 $menuItems = $treatments->getHTMLList();
 
+$categories = get_categories([
+    'taxonomy' => $treatments->taxonomy,
+    'orderby' => 'name',
+    'order'   => 'ASC'
+]);
+
 ?>
 
 
@@ -67,63 +73,24 @@ $menuItems = $treatments->getHTMLList();
 
             <div class="slide-navigation" id="slide-navigation"></div>
 
-            <!-- Menu in hero section, level zero -->
-            <?php if (isset($treatments->getLevelsMap()[0]) && !empty($treatments->getLevelsMap()[0])): ?>
                 <nav data-level="0">
                     <div class="ext-box">
                         <div class="int-box">
                             <ul>
                                 <?php
-                                
-                                    foreach ($treatments->getLevelsMap()[0] as $parent => $items) {
-                                        foreach ($items as $item) {
-                                            
-                                            $post = $treatments->getAllPosts()[$item]['post'];
-                                            $link = $treatments->getAllPosts()[$item]['link'];
-                                            echo '<li data-id="' . $post['ID'] . '">';
-                                            echo '<a href="' . $link . '">';
-                                            echo $post['post_title'];
-                                            echo '</a>';
-                                            echo '</li>';
-                                        }
+                                    foreach ($categories as $category) {
+                                        echo '<li>';
+                                        echo '<a href="' . get_category_link($category->term_taxonomy_id) .'">';
+                                        echo($category->name);
+                                        echo '</a>';
+                                        echo '</li>';
                                     }
                                 ?>
                             </ul>
                         </div>
                     </div>
                 </nav>
-            <?php endif; ?>
 
-            <?php
-                $levels = array_keys($treatments->getLevelsMap());
-                unset($levels[0]);
-            ?>
-
-            <?php foreach ($levels as $level): ?>
-                    
-                <?php foreach ($treatments->getLevelsMap()[$level] as $parent => $items): ?>
-                    <nav data-level="<?php echo $level; ?>" data-parent="<?php echo $parent; ?>" class="hidden">
-                        <div class="ext-box">
-                            <div class="int-box">
-                                <ul>
-                                    <?php
-                                        foreach ($items as $item) {
-                                            $post = $treatments->getAllPosts()[$item]['post'];
-                                            $link = $treatments->getAllPosts()[$item]['link'];
-                                            echo '<li data-id="' . $post['ID'] . '">';
-                                            echo '<a href="' . $link . '">';
-                                            echo $post['post_title'];
-                                            echo '</a>';
-                                            echo '</li>';
-                                        }
-                                    ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>  
-                <?php endforeach; ?>
-                        
-            <?php endforeach; ?>
 
         </div>
     </div>

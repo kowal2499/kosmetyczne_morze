@@ -1,44 +1,34 @@
 <?php
-    $background = get_post_meta($id, 'photo_background')[0];
-    $backgroundPriceList = get_post_meta($id, 'pricelist_background')[0];
-    $priceList = get_post_meta($id, 'price_list')[0];
-    ob_start();
-    the_content();
-    $content = ob_get_clean();
 
-?>
+/**
+ *
+ * sidebar
+ *
+ * 1. ustalamy czy zabieg ma dzieci
+ * 2. jeśli tak to rysujemy sidebar
+ * 3. nad sidebarem nazwa i link do zabiegu macierzystego
+ * 4. w sidebarze rodzeństwo
+ *
+ * content
+ * 1. content
+ * 2. odnośniki do dzieci
+ * 3. nawigacja left/right pomiędzy rodzeństwem
+ *
+ *
+ */
 
-<div class="single-treatment">
+$children = get_children([
+    'post_parent' => $id,
+    'post_type'   => 'zabiegi',
+    'numberposts' => -1,
+    'order' => 'ASC',
+]);
 
-    <div class="row">
-        <div class="col-md-12">
 
-            <?php if ($content): ?>
-            <div class="bck" style="background: url('<?php echo wp_get_attachment_url($background);?>')">
-                <div class="content">
-                    <h1><?php echo get_the_title(); ?></h1>
-                    <?php echo $content; ?>
-                    <?php edit_post_link(__('Edit This'), '<p class="pull-right">', '</p>'); ?>
-                </div>
-            </div>
-            <?php endif; ?>
+if (empty($children)) {
+    get_template_part('template-parts/content-zabiegi-no-sidebar');
+} else {
+    get_template_part('template-parts/content-zabiegi-with-sidebar');
+}
 
-            <?php if ($priceList): ?>
-            <div class="bck reversed" style="background: url('<?php echo wp_get_attachment_url($backgroundPriceList);?>')">
-                <div class="price-list">
-                    <h2>Cennik</h2>
-                    <ul>
-                    <?php
-                        foreach ($priceList as $item) {
-                            echo '<li>' . '<span class="name">' . $item['name'] . '</span><span class="separator">-</span><span class="price">' . $item['value'] . ' zł</span>' . '</li>';
-                        }
-                    ?>
-                    </ul>
-                </div>
-            </div>
-            <?php endif; ?>
 
-        </div>
-    </div>
-
-</div>

@@ -18,24 +18,29 @@ get_header();
     <div id="primary" class="content-area">
         <main id="archive" class="site-main">
             <div class="row">
-                <div class="pageArchive">
+                <div class="pageBody">
 
+                    <?php if (get_post_type() === 'zabiegi'): ?>
+                        <?php get_template_part('template-parts/archive', 'all-zabiegi'); ?>
+                    <?php else: ?>
 
-                    <?php if ( have_posts() ) : ?>
+                        <?php if ( have_posts() ) : ?>
 
-                        <?php
-                        /* Start the Loop */
-                        while ( have_posts() ) :
-                            the_post();
-                            get_template_part( 'template-parts/archive', get_post_type() );
-                        endwhile;
+                            <?php
+                            /* Start the Loop */
+                            while ( have_posts() ) :
+                                the_post();
+                                get_template_part( 'template-parts/archive', get_post_type() );
+                            endwhile;
 
-                    else :
+                        else :
 
-                        get_template_part( 'template-parts/content', 'none' );
+                            get_template_part( 'template-parts/content', 'none' );
 
-                    endif;
-                    ?>
+                        endif;
+                        ?>
+
+                    <?php endif; ?>
 
                     <div class="breadcrumb">
                         <?php echo implode(' &gt; ', \admin\Functions::lanmer_get_breadcrumbs(get_the_ID())); ?>
