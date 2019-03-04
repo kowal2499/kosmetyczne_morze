@@ -1,5 +1,5 @@
 .about-us {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .hh-gallery {
@@ -16,9 +16,10 @@
 
         li.bubble-gallery-item {
             position: absolute;
-            border-radius: 50%;
+
 
             img {
+                border-radius: 50%;
                 width: 150px;
                 height: 150px;
                 border: 6px solid $cWhite;
@@ -72,6 +73,12 @@
                 box-shadow: 0px 0px 4px $cMainBlue;
             }
         }
+    }
+
+    p.description {
+        font-size: 1.4em;
+        line-height: 1.5em;
+        text-align: center;
     }
 
     img.small-logo {
