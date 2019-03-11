@@ -31,7 +31,7 @@ class Functions
                 foreach ($items as $key => $item) {
 
                     $excludesArray = explode(',', strtoupper(get_option(Settings::MENU_ITEMS_HIDE)));
-                    $excludesArray = array_map(trim, $excludesArray);
+                    $excludesArray = array_map(function($item) { return trim($item); }, $excludesArray);
 
                     if (in_array(strtoupper($item->title), $excludesArray)) {
 //                        unset($items[$key]);

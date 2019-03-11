@@ -81,8 +81,12 @@ abstract class CustomPost
             global $post;
 
             // verify nonce
-            if (!wp_verify_nonce($_POST['custom_meta_box_nonce'], basename(__FILE__))) {
-                return $post->ID;
+            if (isset($_POST['custom_meta_box_nonce']) && !wp_verify_nonce($_POST['custom_meta_box_nonce'], basename(__FILE__))) {
+                if ($post) {
+                    return $post->ID;
+                } else {
+                    return null;
+                }
             }
 
             
