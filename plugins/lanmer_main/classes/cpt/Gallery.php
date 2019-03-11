@@ -157,10 +157,101 @@ class Gallery extends CustomPost
         }
     }
 
+    public function renderSimple()
+    {
+        echo '<div class="simpleGallery">';
+        echo '<div class="wrapper">';
+        foreach ($this->galleryItems as $index => $g) {
+            echo '<a href="' . wp_get_attachment_image_src($g['id'], 'full')[0] . '" data-galleryId="' . $this->id . '" style="left: ' . (0 * $index * 40). 'px">';
+            echo '<img src="' . wp_get_attachment_image_src($g['id'], 'thumbnail')[0] . '">';
+            echo '</a>';
+        }
+        echo '</div>';
+        echo '</div>';
+    }
+
     /**
      * Galeria jako content postu
      */
     public function renderContent()
+    {
+
+        $content = '';
+
+        switch ($this->orientation) {
+
+            case 1:
+                $content = $this->renderImagesWithText(false);
+                break;
+
+            case 2:
+                $content = $this->renderImagesWithText(true);
+                break;
+
+            case 5:
+                $content = $this->renderBrands();
+                break;
+
+            default:
+                $content = $this->renderDefault();
+        }
+
+        return '<div class="simpleGallery">' . $content . '</div>';
+    }
+
+    private function renderImagesWithText($textFirst = true)
+    {
+
+        $t = '';
+        $t .= '<div class="row">';
+
+        $t .= '<div class="wrapper">';
+        $tText = '<div class="textArea widthLimit">' . $this->renderText() . '</div>';
+
+        $tImages = '<div class="imagesArea widthLimit">';
+        foreach ($this->galleryItems as $index => $g) {
+            $tImages .= '<a href="' . wp_get_attachment_image_src($g['id'], 'full')[0] . '" data-galleryId="' . $this->id . '" class="gallery">';
+            $tImages .= '<img src="' . wp_get_attachment_image_src($g['id'], 'thumbnail')[0] . '">';
+            $tImages .= '</a>';
+        }
+        $tImages .= '</div>';
+
+        if ($textFirst) {
+            $t .= $tText . $tImages;
+        } else {
+            $t .= $tImages . $tText;
+        }
+
+        $t .= '</div>';
+
+        $t .= '</div>';
+
+        return $t;
+    }
+
+    private function renderBrands()
+    {
+        $t = '';
+        $t .= '<div class="row">';
+
+        $t .= '<div class="wrapperBrands">';
+
+        $t .= '<div class="textArea text-center">' . $this->renderText() . '</div>';
+
+        $t .= '<div class="imagesArea">';
+        foreach ($this->galleryItems as $index => $g) {
+            $t .= '<img src="' . wp_get_attachment_image_src($g['id'], 'full')[0] . '">';
+        }
+        $t .= '</div>';
+
+        $t .= '</div>';
+        $t .= '</div>';
+
+        return $t;
+
+    }
+
+    private function renderDefault()
     {
         $ret = '<div class="content-gallery">';
         $ret .= '<div class="grid">';
@@ -174,6 +265,16 @@ class Gallery extends CustomPost
         $ret .= '</div>';
 
         return $ret;
+    }
+
+    private function renderText()
+    {
+        $t = '';
+        $t .= '<h2>' . $this->title . '</h2>';
+        $t .= '<div class="logo"></div>';
+        $t .= '<p class="description">' . $this->description . '</p>';
+
+        return $t;
     }
 
     protected function beforeMetaBox()

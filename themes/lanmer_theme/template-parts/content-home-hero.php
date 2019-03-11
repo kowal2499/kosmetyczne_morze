@@ -8,11 +8,7 @@ $slider = $settings->getSlider();
 
 $menuItems = $treatments->getHTMLList();
 
-$categories = get_categories([
-    'taxonomy' => $treatments->taxonomy,
-    'orderby' => 'name',
-    'order'   => 'ASC'
-]);
+$categories = $treatments->getCategories();
 
 ?>
 
@@ -55,15 +51,18 @@ $categories = get_categories([
             
             foreach ($slider as $slide): ?>
                 
-                <div class="slide" data-id="<?php echo $c; ?>">
+                <div class="slide" data-id="<?php echo $c; ?>" style="background-image: url('<?php echo wp_get_attachment_url($slide['actor']); ?>')">
+
+                    <?php if ($slide['text']): ?>
                     <div class="sentence">
                         <h3 class="slide-lead"><?php echo $slide['text']; ?></h3>
                         <?php if ($slide['cta_enable']): ?>
                             <a href="<?php echo $slide['cta_link']; ?>" class="cta"><?php echo $slide['cta_text']; ?></a>
                         <?php endif; ?>
                     </div>
+                    <?php endif; ?>
                     
-                    <img class="slide-img <?php if ($c==0) { echo 'anim-right'; } ?>" style="" src="<?php echo wp_get_attachment_url($slide['actor']); ?>">
+<!--                    <img class="slide-img" src="--><?php //echo wp_get_attachment_url($slide['actor']); ?><!--">-->
                 </div>
                     
                 <?php $c+=1; ?>

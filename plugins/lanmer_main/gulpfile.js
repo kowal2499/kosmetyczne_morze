@@ -15,8 +15,8 @@ var cssAssets = [
 ];
 var jsAssets = [
     // 'assets/src/js/vendor/jquery-3.3.1.js',
-    'assets/src/js/vendor/bootstrap.min.js',
-    'assets/src/js/vendor/ie10-viewport-bug-workaround.js',
+    // 'assets/src/js/vendor/bootstrap.min.js',
+    'node_modules/bootstrap3/dist/js/bootstrap.js',
 
     // here you may add other files usually enqueued by wordpress:
     // other wp files
@@ -26,7 +26,6 @@ var jsAssets = [
     'assets/src/js/_app.js',
     'assets/src/js/app.sideMenu.js',
     'assets/src/js/app.slider.js',
-    'assets/src/js/app.sliderStaff.js',
     'assets/src/js/app.sliderTreatment.js',
     'assets/src/js/app.contactForm.js',
     'assets/src/js/app.lightbox.js',
@@ -57,7 +56,7 @@ function concatJS() {
         return gulp
         .src(jsAssets)
         .pipe(concat('app.js', {newLine: ';'}))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(distFolder));
 }
 

@@ -24,6 +24,16 @@
             "title": "Małe zdjęcie właściciela"
         },
 
+        "categories_order": {
+            "class": "Textarea",
+            "title": "Kolejność kategorii",
+            "attr": {
+                "rows": 3,
+                "cols": 40
+            },
+            "desc": "Lista slugów rozdzielona przecinkami."
+        },
+
         "general_menu_hide": {
             "class": "Textarea",
             "title": "Pozycje menu ukryte na stronie głównej",

@@ -8,10 +8,9 @@
 
         kosmetyczneMorze.sideMenu('body');
         kosmetyczneMorze.slider('.heroContainer #slider');
-        // kosmetyczneMorze.sliderStaff('.staff, .staff2');
-        kosmetyczneMorze.sliderTreatment('.sub-treatments.slider');
+        // kosmetyczneMorze.sliderTreatment('.sub-treatments.slider');
 
-        kosmetyczneMorze.frontPageNavigation('.heroContainer');
+        // kosmetyczneMorze.frontPageNavigation('.heroContainer');
         kosmetyczneMorze.lightbox('a.gallery');
         kosmetyczneMorze.contactForm('.js-footer-form');
     };

@@ -83,10 +83,6 @@ class Lanmer_Main extends Plugin
             return get_template_part( 'template-parts/content', 'home-hero' );
         });
 
-        add_shortcode('lanmer-advatages-and-galleries', function() {
-            return get_template_part( 'template-parts/content', 'home-advantages-and-galleries' );
-        });
-
         add_shortcode('lanmer-staff', function() {
             return get_template_part( 'template-parts/content', 'home-staff' );
         });

@@ -25,6 +25,7 @@ $tax = get_queried_object();
                     <div class="row">
                         <div class="col-md-12">
 
+
                             <?php if (have_posts()) : ?>
 
                                 <div class="treatment-category">

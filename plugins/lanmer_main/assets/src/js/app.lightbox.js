@@ -10,15 +10,21 @@ kosmetyczneMorze.lightbox = (function($) {
         $wrapper.each(function (i, item) {
             var id = $(item).data('galleryid');
             if (galleryIds.indexOf(id) === -1) {
-                galleryIds.push(id);
+                if (id) {
+                    galleryIds.push(id);
+                }
             }
         });
-
 
         // use collected ids to launch simpleLightbox per each gallery
         galleryIds.forEach(function (id) {
             $('a.gallery[data-galleryid="' + id + '"]').simpleLightbox();
-        })
+        });
+
+        // common gallery if no ids specifed
+        if (galleryIds.length === 0) {
+            $('a.gallery').simpleLightbox();
+        }
     };
 
     return init;

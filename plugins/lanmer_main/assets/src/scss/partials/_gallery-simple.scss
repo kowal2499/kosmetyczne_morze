@@ -1,0 +1,116 @@
+.simpleGallery {
+
+    margin: 40px auto;
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+
+        .imagesArea {
+
+
+            text-align: center;
+
+            a {
+                position: relative;
+
+
+                img {
+                    border: 6px solid $cWhite;
+                    margin: 5px;
+
+                    border-radius: 100px;
+                    width: 150px;
+                    height: 150px;
+
+                    transition: all 0.4s;
+                    position: relative;
+                    z-index: 1;
+
+                    opacity: 0.3;
+                }
+
+
+                &:hover {
+                    img {
+                        border-color: $cMainBlue;
+                        box-shadow: 0px 0px 8px $cMainBlue;
+                        opacity: 1;
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            &.widthLimit {
+                width: 60%;
+            }
+        }
+
+        .textArea {
+
+            p.description {
+                font-size: 1.4em;
+                line-height: 1.5em;
+                text-align: center;
+                margin: 10px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+                margin: 20px auto;
+                display: block;
+                background-size: cover;
+            }
+
+            &.widthLimit {
+                width: 40%;
+            }
+
+        }
+
+
+    }
+
+    .wrapperBrands {
+
+        .imagesArea {
+            text-align: center;
+
+            img {
+                width: 200px;
+                margin: 20px;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+
+    .simpleGallery {
+
+        .wrapper {
+            flex-wrap: wrap;
+
+            .imagesArea {
+                order: 2;
+
+                &.widthLimit {
+                    width: 100%;
+                }
+            }
+            .textArea {
+                order: 1;
+
+                &.widthLimit {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+
+}

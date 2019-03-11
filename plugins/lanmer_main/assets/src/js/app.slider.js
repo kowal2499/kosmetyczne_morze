@@ -26,18 +26,14 @@ kosmetyczneMorze.slider = (function($) {
             },
         });
 
-        $wrapper.on('click', function(e) {
-            e.preventDefault();
-        })
-
-        $wrapper.on('afterChange', function(event, slick, direction) {
-            $('.slide-img').removeClass('anim-right');
-            var currentSlideId = ($wrapper.slick('slickCurrentSlide'));
-            var currentSlideElm = $wrapper.find('.slide[data-id="' + currentSlideId + '"]')
-
-            // attach animation classes
-            currentSlideElm.find('.slide-img').addClass('anim-right');
-        });
+        // $wrapper.on('afterChange', function(event, slick, direction) {
+        //     $('.slide-img').removeClass('anim-right');
+        //     var currentSlideId = ($wrapper.slick('slickCurrentSlide'));
+        //     var currentSlideElm = $wrapper.find('.slide[data-id="' + currentSlideId + '"]')
+        //
+        //     // attach animation classes
+        //     currentSlideElm.find('.slide-img').addClass('anim-right');
+        // });
     }
 
     return init;

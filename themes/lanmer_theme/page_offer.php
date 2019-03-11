@@ -7,12 +7,8 @@ Template name: Offer
 
 get_header();
 
-$categories = get_categories([
-    'taxonomy' => 'kategoria',
-    'orderby' => 'name',
-    'order'   => 'ASC'
-]);
-
+$treatments = \cpt\Treatments::getInstance();
+$categories = $treatments->getCategories();
 
 ?>
 

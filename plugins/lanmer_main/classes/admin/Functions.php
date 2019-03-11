@@ -75,17 +75,8 @@ class Functions
 
     public static function lanmer_zabiegi_pre_get($query)
     {
-        if (is_post_type_archive('zabiegi') && !is_admin() && $query->is_main_query()) {
+        if ((is_post_type_archive('zabiegi') && !is_admin() && $query->is_main_query()) || is_tax()) {
             $query->set('posts_per_page', -1);
-            $query->set('post_parent', 0);
-            $query->set('orderby', 'date');
-            $query->set('order', 'ASC');
-        }
-
-        if (is_post_type_archive('pracownicy') && !is_admin() && $query->is_main_query()) {
-            $query->set('posts_per_page', -1);
-            $query->set('orderby', 'date');
-            $query->set('order', 'ASC');
         }
     }
 

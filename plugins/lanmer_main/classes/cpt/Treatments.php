@@ -231,52 +231,31 @@ class Treatments extends CustomPost
         return $html;
     }
 
-    /**
-     * 
-     */
-//    private function getCategories($parent, &$tree, &$levelMap, $level=0)
-//    {
-//        $q = new \WP_Query(
-//            [
-//                'post_type' => $this->name,
-//                'posts_per_page' => -1,
-//                'post_parent' => $parent,
-//                'order' => 'ASC',
-//                'orderby' => 'menu_order'
-//            ]
-//        );
-//
-//        $posts = [];
-//
-//        if ($q->have_posts()) {
-//
-//            $thisLevel = [];
-//
-//            while ($q->have_posts()) {
-//                $q->the_post();
-//
-//                $id = get_the_id();
-//
-//                $levelMap[$level][$parent][] = $id;
-//
-//                $tree[$id] = [
-//                    'post' => get_post(null, ARRAY_A),
-//                    'link' => get_the_permalink(),
-//                    'childs' => []
-//                ];
-//
-//                $this->allPosts[$id] = [
-//                    'post' => get_post(null, ARRAY_A),
-//                    'link' => get_the_permalink(),
-//                ];
-//
-//                $this->getCategories($id, $tree[$id]['childs'], $levelMap, $level+1);
-//
-//            }
-//
-//        }
-//        wp_reset_query();
-//    }
+    public function getCategories()
+    {
+
+        $categories = get_categories([
+            'taxonomy' => $this->taxonomy,
+            'hide_empty' => true
+        ]);
+
+        $order = get_option(\admin\Settings::CATEGORIES_ORDER);
+        $order = explode(',', $order);
+        $order = array_map(function ($item) { return trim($item); }, $order);
+
+        usort($categories, function($a, $b) use ($order) {
+            $aKey = array_search($a->category_nicename, $order) !== false ? array_search($a->category_nicename, $order) : 1000;
+            $bKey = array_search($b->category_nicename, $order) !== false ? array_search($b->category_nicename, $order) : 1000;
+
+            if ($aKey == $bKey) {
+                return 0;
+            }
+
+            return $aKey > $bKey ? 1 : -1;
+        });
+
+        return $categories;
+    }
 
     public static function getInstance() {
         if (empty(self::$instance)) {

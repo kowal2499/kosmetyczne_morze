@@ -12,10 +12,10 @@ $content = ob_get_clean();
 
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-12 bck" style="background: url('<?php echo wp_get_attachment_url($background);?>')">
 
             <?php if ($content): ?>
-                <div class="bck" style="background: url('<?php echo wp_get_attachment_url($background);?>')">
+                <div class="" >
                     <div class="content">
                         <h1><?php echo get_the_title(); ?></h1>
                         <?php echo $content; ?>

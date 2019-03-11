@@ -12,11 +12,14 @@
 
         "orientation": {
             "class": "Select",
-            "title": "Kierunek",
+            "title": "Typ",
             "attr": {
                 "options": [
-                    {"name": "slajd po lewej stronie, opis po prawej", "value": "1"},
-                    {"name": "slajd po prawej stronie, opis po lewej", "value": "2"}
+                    {"name": "po lewej galeria, po prawej tekst", "value": "1"},
+                    {"name": "po lewej tekst, po prawej galeria", "value": "2"},
+                    {"name": "tylko obrazki w okręgu", "value":  "3"},
+                    {"name": "tylko obrazki w kwadracie", "value": "4"},
+                    {"name": "loga marek", "value": "5"}
                 ]
             }
         },

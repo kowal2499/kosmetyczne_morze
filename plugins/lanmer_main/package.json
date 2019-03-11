@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.2",
+    "bootstrap3": "^3.3.5",
     "fs": "0.0.1-security",
     "save-dev": "^2.0.0",
     "simplelightbox": "^1.13.0",

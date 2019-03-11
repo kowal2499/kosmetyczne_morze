@@ -18,6 +18,7 @@ class Settings
     const FOOTER_CONTACT_FORM_SHOW = 'footer_contact_form';
     const FOOTER_CONTACT_FORM_EMAIL = 'footer_destinated_email';
     const FOOTER_CONTACT_DETAILS = 'footer_contacts';
+    const CATEGORIES_ORDER = 'categories_order';
 
     /*
      * Instancja
