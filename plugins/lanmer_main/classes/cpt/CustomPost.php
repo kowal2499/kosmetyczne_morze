@@ -75,7 +75,7 @@ abstract class CustomPost
     private function save()
     {
         global $post_id;
-        
+
         add_action('save_post', function () use ($post_id) {
            
             global $post;
