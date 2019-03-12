@@ -10,6 +10,7 @@ var distFolder = 'assets/build';
 var sassAsset = 'assets/src/scss/*.scss';
 var compiledSassFolder = 'assets/src/css';
 var cssAssets = [
+    'node_modules/bootstrap3/dist/css/bootstrap.css',
     'assets/src/css/vendor/**/*.css',
     compiledSassFolder + '/*.css'
 ];
