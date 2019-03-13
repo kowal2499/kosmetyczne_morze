@@ -5,9 +5,63 @@ body {
 
 .hero {
     .sectionLogo {
-        img {
-            width: 250px;
+
+        text-align: center;
+        font-size: 0;
+
+        .item {
+            display: inline-block;
+            width: 33%;
+
+            vertical-align: top;
+            font-size: 12px;
+
+
+
+            &.left {
+                text-align: left;
+                font-size: 0;
+
+                .block {
+                    font-size: 12px;
+                    display: inline-block;
+
+
+                    .ext-box {
+                        height: 40px;
+                                            text-align: center;
+
+                        i {
+                            color: $cWhite
+                        }
+
+                        &.contact-icon {
+                            background-color: $cMainBlue;
+                            width: 40px;
+                        }
+
+                        &.contact-txt {
+                            background-color: $cLightGray;
+                            padding-left: 20px;
+                            padding-right: 20px;
+                        }
+                    }
+                }
+            }
+
+            &.center {
+                img {
+                    width: 100%;
+                    max-width: 250px;
+                    margin: 0 auto;
+                }
+            }
+
+            &.right {
+                text-align: right;
+            }
         }
+
         padding: 20px 0;
     }
 
@@ -215,13 +269,30 @@ body {
 */
 @media screen and (max-width: 650px) {
     .hero {
+        .menuContainer .sectionLogo {
+            .item.left,
+            .item.right {
+                display: none;
+            }
+
+            .item {
+                width: 100%;
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .hero {
         .heroContainer {
             .wrapper {
-                left: 0;
+                display: none;
             }
 
             nav {
-                display: none;
+                width: 100%;
             }
 
             .slide-navigation {

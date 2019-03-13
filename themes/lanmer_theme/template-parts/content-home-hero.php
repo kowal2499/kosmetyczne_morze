@@ -10,6 +10,7 @@ $menuItems = $treatments->getHTMLList();
 
 $categories = $treatments->getCategories();
 
+
 ?>
 
 
@@ -19,7 +20,51 @@ $categories = $treatments->getCategories();
 
         <div class="menuContainer">
             <div class="sectionLogo">
-                <img src="<?php echo wp_get_attachment_url(get_option(Settings::MAIN_LOGO)); ?>" class="img-responsive center-block">
+                <div class="item left">
+
+                    <?php foreach ([
+                                       [
+                                           'icon' => get_option(Settings::FOOTER_CONTACT_DETAILS)[0]['contact_icon'],
+                                           'text' => get_option(Settings::FOOTER_CONTACT_DETAILS)[0]['contact_text']
+                                       ],
+                                       [
+                                           'icon' => get_option(Settings::FOOTER_CONTACT_DETAILS)[1]['contact_icon'],
+                                           'text' => get_option(Settings::FOOTER_CONTACT_DETAILS)[1]['contact_text']
+                                       ],
+                                   ] as $item) : ?>
+
+                        <div style="margin-bottom: 6px;">
+                            <div class="block">
+                                <div class="ext-box contact-icon">
+                                    <div class="int-box">
+                                        <i class="<?php echo $item['icon']; ?> fa-1x"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="ext-box contact-txt">
+                                    <div class="int-box">
+                                        <?php echo $item['text']; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+
+                </div>
+
+                <div class="item center">
+                    <img src="<?php echo wp_get_attachment_url(get_option(Settings::MAIN_LOGO)); ?>" class="img-responsive">
+                </div>
+
+                <div class="item right">
+                    <?php if (get_option(Settings::GENERAL_FB)): ?>
+                        <a href="<?php echo get_option(Settings::GENERAL_FB); ?>" target="_blank"><img src="<?php echo plugins_url() . '/lanmer_main/assets/imgs/facebook.png' ?>"></a>
+                    <?php endif; ?>
+                </div>
+
             </div>
 
             <div class="sectionMenu">

@@ -11,6 +11,7 @@ class Settings
     const MENU_ITEMS_HIDE = 'general_menu_hide';
     const GENERAL_BACKGROUND = 'general_main_background';
     const GENERAL_OWNER_PHOTO = 'owner_logo';
+    const GENERAL_FB = 'general_facebook';
     const RULES = 'rules';
 
     const FOOTER_BACKGROUND = 'footer_background';

@@ -42,6 +42,11 @@
                 "cols": 40
             },
             "desc": "Menu na stronie głównej nie będzie pokazywać tych linków.<br>Lista nazw rozdzielona przecinkami."
+        },
+
+        "general_facebook": {
+            "class": "Text",
+            "title": "Profil FB"
         }
     }
 }

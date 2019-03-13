@@ -33,9 +33,24 @@ use admin\Settings;
 
                 <?php if (get_option(Settings::FOOTER_CONTACT_FORM_SHOW) === '1'): ?>
                     <div class="col-sm-12 col-md-6">
-                        <?php get_template_part('template-parts/footer', 'contact-form'); ?>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <?php get_template_part('template-parts/footer', 'contact-form'); ?>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <?php if (get_option(Settings::GENERAL_FB)): ?>
+                                    <a href="<?php echo get_option(Settings::GENERAL_FB); ?>" target="_blank"><img class="img-social pull-right" src="<?php echo plugins_url() . '/lanmer_main/assets/imgs/facebook.png' ?>"></a>
+                                    <br>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
                 <?php endif; ?>
+
+
 
             </div>
 
