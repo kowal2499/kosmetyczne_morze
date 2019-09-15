@@ -20,6 +20,7 @@ use admin\Settings;
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+    <meta name="google-site-verification" content="o2iommO-O7feNGMl2lFTu1ZJSV3Gx1kHbKdCeBj9hfQ" />
 </head>
 
 <body <?php body_class(); ?> >
