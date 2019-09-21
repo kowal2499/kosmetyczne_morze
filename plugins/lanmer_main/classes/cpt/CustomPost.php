@@ -23,7 +23,7 @@ abstract class CustomPost
                 }
             }
         }
-        $this->save();
+        $this->hookSave();
 
     }
 
@@ -72,11 +72,11 @@ abstract class CustomPost
         });
     }
 
-    private function save()
+    private function hookSave()
     {
         global $post_id;
 
-        add_action('save_post', function () use ($post_id) {
+        add_action('save_post_' . $this->name, function () use ($post_id) {
            
             global $post;
 
